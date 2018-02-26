@@ -1,0 +1,28 @@
+.RecipePage {
+}
+
+.Date {
+    margin-right: 50px;
+}
+
+.RecipeContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.RecipeContent img {
+    width: 100%;
+    min-height: 200px;
+}
+
+.RightContent {
+    padding: 20px;
+}
+
+.RightContent p {
+    /*width: 75%;*/
+    font-size: 1.4rem;
+}

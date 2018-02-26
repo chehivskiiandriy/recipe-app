@@ -1,0 +1,30 @@
+.RecipeCard {
+    position: relative;
+}
+
+.Like {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FixedHeart {
+    margin: 10% 0 0 0 !important;
+    z-index: 11;
+}
+
+.heart:before {
+    color: #fff !important;
+}
+
+.ActiveHeart.heart:before {
+    color: #db2828 !important;
+}

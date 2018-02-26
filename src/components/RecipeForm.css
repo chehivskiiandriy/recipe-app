@@ -1,0 +1,34 @@
+.RecipeForm {
+    margin-bottom: 30px;
+}
+
+.NewIngredientCard {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.AddHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin: 0 15px;
+}
+
+.IngredientsList {
+    margin: 15px;
+}
+
+.IngredientsList .ui.horizontal.list:not(.celled)>.item:first-child {
+    padding-left: .5em !important;
+}
+
+.NewIngredientCard i {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.NewIngredientCard label {
+    margin-right: 20px;
+    width: 120px;
+}
