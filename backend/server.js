@@ -31,8 +31,8 @@ mongodb.MongoClient.connect(dbUrl, (err, client) =>{
     app.post('/api/recipes', (req, res) => {
         const { errors, isValid } = validate(req.body);
         if (isValid) {
-            const { title, cover, description, ingredients, views, date } = req.body;
-            db.collection('recipes').insert({ title, cover, description, ingredients, views, date }, (err, result) => {
+            const { title, cover, description, ingredients, views, date, liked } = req.body;
+            db.collection('recipes').insert({ title, cover, description, ingredients, views, date, liked }, (err, result) => {
                 if (err) {
                     res.status(500).json({ errors: { global: "Something went wrong"} });
                 } else {
@@ -54,11 +54,11 @@ mongodb.MongoClient.connect(dbUrl, (err, client) =>{
         const { errors, isValid } = validate(req.body);
 
         if(isValid) {
-            const { title, cover, description, ingredients, views, date } = req.body;
+            const { title, cover, description, ingredients, views, date, liked } = req.body;
 
             db.collection('recipes').findOneAndUpdate(
                 { _id: new mongodb.ObjectId(req.params._id) },
-                { $set: { title, cover, description, ingredients, views, date } },
+                { $set: { title, cover, description, ingredients, views, date, liked } },
                 { returnOriginal: false },
                 (err, result) => {
                     if(err) {

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 
 import './RecipeCard.css';
 import { updateRecipe, deleteRecipe } from "../store/actions";
@@ -15,6 +16,7 @@ class RecipeCard extends React.Component {
     static colors = ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey'];
 
     likeHandler = () => {
+        console.log(this.props);
         this.props.updateRecipe({...this.props.recipe, liked: !this.props.recipe.liked})
     };
 
@@ -28,7 +30,7 @@ class RecipeCard extends React.Component {
                     <img src={recipe.cover} alt="Recipe Cover"/>
                 </Link>
                 {url.includes('recipes') ? null : <div className="Like" onClick={this.likeHandler}>
-                    <i className="big heart icon FixedHeart ActiveHeart" />
+                    <i className={classnames('big', 'heart', 'icon', 'FixedHeart', { ActiveHeart: recipe.liked } )}/>
                 </div> }
                 <Link to={`/recipe/${recipe._id}`} className="content">
                     <div className="header">{recipe.title}</div>

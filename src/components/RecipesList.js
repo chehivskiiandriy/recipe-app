@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import RecipeCard from './RecipeCard';
 
-const recipesList = ({recipes, deleteRecipe, updateRecipe, url}) => {
+const recipesList = ({recipes, url}) => {
     const emptyMessage = (
         <p>There are no recipes yet in your collection.</p>
     );
@@ -11,12 +11,7 @@ const recipesList = ({recipes, deleteRecipe, updateRecipe, url}) => {
     const recipesList = (
         <div className="ui link doubling stackable four centered cards">
             { recipes.map( recipe =>
-                <RecipeCard
-                    recipe={recipe}
-                    key={recipe._id}
-                    deleteRecipe={deleteRecipe}
-                    updateRecipe={updateRecipe}
-                    url={url}/>) }
+                <RecipeCard recipe={recipe} key={recipe._id} url={url}/>) }
         </div>
     );
 
@@ -28,8 +23,7 @@ const recipesList = ({recipes, deleteRecipe, updateRecipe, url}) => {
 };
 
 recipesList.propTypes = {
-    recipes: PropTypes.array.isRequired,
-    deleteRecipe: PropTypes.func.isRequired
+    recipes: PropTypes.array.isRequired
 };
 
 export default recipesList;

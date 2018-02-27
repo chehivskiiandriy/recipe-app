@@ -13,6 +13,7 @@ class RecipeForm extends React.Component {
         ingredients: this.props.recipe ? this.props.recipe.ingredients : [],
         date: this.props.recipe ? this.props.recipe.date : '',
         views: this.props.recipe ? this.props.recipe.views : 0,
+        liked: this.props.recipe ? this.props.recipe.liked : false,
         newIngredient: '',
         errors: {},
         loading: false
@@ -27,7 +28,8 @@ class RecipeForm extends React.Component {
                 description: nextProps.recipe.description,
                 ingredients: nextProps.recipe.ingredients,
                 date: nextProps.recipe.date,
-                views: nextProps.recipe.views
+                views: nextProps.recipe.views,
+                liked: nextProps.recipe.liked
             })
         }
     };
@@ -61,10 +63,10 @@ class RecipeForm extends React.Component {
         const isValid = Object.keys(errors).length === 0;
 
         if (isValid) {
-            const { _id, title, cover, description, ingredients, views } = this.state;
+            const { _id, title, cover, description, ingredients, views, liked } = this.state;
             const date = new Date();
             this.setState({loading: true});
-            this.props.saveRecipe({ _id, title, cover, description, ingredients, views, date })
+            this.props.saveRecipe({ _id, title, cover, description, ingredients, views, date, liked })
                 .catch((err) => err.response.json().then(({errors}) => this.setState({ errors, loading: false })));
         }
     };

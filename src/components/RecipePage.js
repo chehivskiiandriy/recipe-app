@@ -13,7 +13,8 @@ class RecipePage extends React.Component {
         description: this.props.recipe ? this.props.recipe.description : '',
         ingredients: this.props.recipe ? this.props.recipe.ingredients : [],
         date: this.props.recipe ? this.props.recipe.date : '',
-        views: this.props.recipe ? this.props.recipe.views : 0
+        views: this.props.recipe ? this.props.recipe.views : 0,
+        liked: this.props.recipe ? this.props.recipe.liked : false
     };
 
     componentWillReceiveProps = (nextProps) => {
@@ -25,7 +26,8 @@ class RecipePage extends React.Component {
                 description: nextProps.recipe.description,
                 ingredients: nextProps.recipe.ingredients,
                 date: nextProps.recipe.date,
-                views: nextProps.recipe.views
+                views: nextProps.recipe.views,
+                liked: nextProps.recipe.liked
             })
         }
     };
@@ -44,7 +46,7 @@ class RecipePage extends React.Component {
     }
 
     render () {
-        const { title, cover, description, ingredients, date, views } = this.state;
+        const { title, cover, description, ingredients, date, views, liked } = this.state;
         
         return (
             <div className="RecipePage">

@@ -10,11 +10,13 @@ import 'semantic-ui-css/semantic.min.css';
 import './index.css';
 import App from './App';
 import recipes from './store/reducers/recipes';
+import filters from './store/reducers/filters';
 
 import registerServiceWorker from './registerServiceWorker';
 
 const rootReducer = combineReducers({
-    recipes
+    recipes,
+    filters
 });
 
 const store = createStore(
