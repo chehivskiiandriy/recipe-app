@@ -7,5 +7,6 @@ export {
 } from './recipes';
 export  {
     setVisibility,
-    setSort
+    setSort,
+    resetFilters
 } from './filters';

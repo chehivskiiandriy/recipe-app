@@ -28,18 +28,16 @@ class Filters extends React.Component {
                     {selected.name || type + ' Recipes'}
                 </span>
                 <div className={classnames('menu transition', {visible: active})}>
-                    <div className="scrolling menu">
-                        {
-                            values.map(item => (
-                                <div key={item.name}
-                                     className={classnames('item', {active: item.name === selected.name})}
-                                     onClick={() => this.handleSelect(item)}>
-                                    <div className={classnames('ui empty circular label', item.color)} />
-                                    {item.name}
-                                </div>
-                            ))
-                        }
-                    </div>
+                    {
+                        values.map(item => (
+                            <div key={item.name}
+                                 className={classnames('item', {active: item.name === selected.name})}
+                                 onClick={() => this.handleSelect(item)}>
+                                <div className={classnames('ui empty circular label', item.color)} />
+                                {item.name}
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         )

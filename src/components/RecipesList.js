@@ -10,8 +10,8 @@ const recipesList = ({recipes, url}) => {
 
     const recipesList = (
         <div className="ui link doubling stackable four centered cards">
-            { recipes.map( recipe =>
-                <RecipeCard recipe={recipe} key={recipe._id} url={url}/>) }
+            {recipes.map(recipe =>
+                <RecipeCard recipe={recipe} key={recipe._id} url={url}/>)}
         </div>
     );
 

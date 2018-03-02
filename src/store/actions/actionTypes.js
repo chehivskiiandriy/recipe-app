@@ -6,3 +6,4 @@ export const RECIPE_DELETED = 'RECIPE_DELETED';
 
 export const SET_VISIBILITY = 'SET_VISIBILITY';
 export const SET_SORT = 'SET_SORT';
+export const RESET_FILTERS = 'RESET_FILTERS';

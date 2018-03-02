@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchRecipe, updateRecipe } from '../store/actions/index';
 import IngredientList from './IngredientList';
 import './RecipePage.css';
+import classnames from "classnames";
 
 class RecipePage extends React.Component {
     state = {
@@ -41,13 +42,17 @@ class RecipePage extends React.Component {
 
     componentWillUnmount() {
         let { views } = this.state;
-        views ? ++views : views = 1;
+        ++views;
         this.props.updateRecipe({...this.state, views});
     }
 
+    likeHandler = () => {
+        this.props.updateRecipe({...this.state, liked: !this.state.liked});
+    };
+
     render () {
         const { title, cover, description, ingredients, date, views, liked } = this.state;
-        
+
         return (
             <div className="RecipePage">
                 <div>
@@ -59,12 +64,18 @@ class RecipePage extends React.Component {
                     </span>
                 </div>
                 <div className="RecipeContent">
-                    <div style={{
+                    <div className="LeftContent" style={{
                         backgroundImage: 'url(' + cover + ')',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         minHeight: '300px'
-                    }}/>
+                    }}>
+                        <div className="PopupContent">
+                            <div className="Like1" onClick={this.likeHandler}>
+                                <i className={classnames('huge', 'heart', 'icon', 'FixedHeart', { ActiveHeart: liked } )}/>
+                            </div>
+                        </div>
+                    </div>
                     <div className="RightContent">
                         <p>{description}</p>
                         <IngredientList ingredients={ingredients}/>

@@ -18,6 +18,10 @@ const reducer = (state = initialState, action = {}) => {
                 ...state,
                 sort: action.sort
             };
+        case actionTypes.RESET_FILTERS:
+            return {
+                ...initialState
+            };
         default: return state;
     }
 };

@@ -1,0 +1,25 @@
+.SecondaryMenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px 0 30px 0;
+}
+
+.RightMenu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.RightMenu .Item {
+    margin-right: 20px;
+}
+
+@media (max-width: 400px) {
+    .RightMenu .Item {
+        margin-bottom: 20px;
+    }
+}
+
+.RightMenu .Item:last-child, .RightMenu .Item:last-child {
+    margin-right: 0;
+}

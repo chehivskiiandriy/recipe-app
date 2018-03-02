@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import RecipesList from './RecipesList';
 import Filters from './Filters';
-import { fetchRecipes, setVisibility, setSort } from '../store/actions/index';
+import { fetchRecipes, setVisibility, setSort, resetFilters } from '../store/actions/index';
 import { SORT_BY_DATE, SORT_BY_ALPHABET, SORT_BY_VIEWS, SHOW_ALL, SHOW_LIKED, SHOW_DISLIKED } from "../shared/constant";
+import './RecipesPage.css';
 
 class RecipesPage extends React.Component {
     static propTypes = {
@@ -17,29 +19,35 @@ class RecipesPage extends React.Component {
         this.props.fetchRecipes();
     }
 
+    componentWillUnmount () {
+        this.props.resetFilters();
+    }
+
     render () {
-        const sortValues = [{name: 'By date', color: 'red', type: SORT_BY_DATE},
-            {name: 'By views', color: 'purple', type: SORT_BY_VIEWS},
-            {name: 'By alphabet', color: 'blue', type: SORT_BY_ALPHABET}];
-        const visibilityValues = [{name: 'Show all', color: 'red', type: SHOW_ALL},
-            {name: 'Show liked', color: 'purple', type: SHOW_LIKED},
-            {name: 'Show disliked', color: 'blue', type: SHOW_DISLIKED}];
+        const sortValues = [{name: 'By date', color: 'teal', type: SORT_BY_DATE},
+            {name: 'By views', color: 'olive', type: SORT_BY_VIEWS},
+            {name: 'By alphabet', color: 'orange', type: SORT_BY_ALPHABET}];
+        const visibilityValues = [{name: 'Show all', color: 'blue', type: SHOW_ALL},
+            {name: 'Show liked', color: 'red', type: SHOW_LIKED},
+            {name: 'Show disliked', color: 'grey', type: SHOW_DISLIKED}];
 
         return (
             <div>
-                <div className="ui secondary menu">
+                <div className="ui SecondaryMenu ">
                     <h1 className="item">Recipes List</h1>
-                    <div className="right menu">
-                        <div className="ui item">
+                    <div className="RightMenu">
+                        <div className="ui Item">
                             <Filters type="Sort" values={sortValues} setFilter={this.props.setSort}/>
                         </div>
-                        {this.props.match.url.includes('recipes') ? null :
-                            <div className="ui item">
-                                <Filters type="Filter" values={visibilityValues} setFilter={this.props.setVisibility}/>
-                            </div>}
+                        <div className="ui Item">
+                            {this.props.match.url.includes('recipes')
+                                ? <Link className="ui button" to="/recipes/new">Add New Recipe</Link>
+                                : <Filters type="Filter" values={visibilityValues} setFilter={this.props.setVisibility}/>
+                            }
+                        </div>
                     </div>
                 </div>
-                <RecipesList recipes={this.props.recipes} url={this.props.match.url}/>
+                <RecipesList recipes={this.props.recipes} url={this.props.match.url} />
             </div>
         );
     }
@@ -77,4 +85,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, {fetchRecipes, setVisibility, setSort})(RecipesPage);
+export default connect(mapStateToProps, {fetchRecipes, setVisibility, setSort, resetFilters})(RecipesPage);

@@ -13,3 +13,9 @@ export const setSort = sort => {
         sort
     }
 };
+
+export const resetFilters = () => {
+    return {
+        type: actionTypes.RESET_FILTERS
+    }
+};

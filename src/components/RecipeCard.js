@@ -16,7 +16,6 @@ class RecipeCard extends React.Component {
     static colors = ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey'];
 
     likeHandler = () => {
-        console.log(this.props);
         this.props.updateRecipe({...this.props.recipe, liked: !this.props.recipe.liked})
     };
 
@@ -32,7 +31,7 @@ class RecipeCard extends React.Component {
                 {url.includes('recipes') ? null : <div className="Like" onClick={this.likeHandler}>
                     <i className={classnames('big', 'heart', 'icon', 'FixedHeart', { ActiveHeart: recipe.liked } )}/>
                 </div> }
-                <Link to={`/recipe/${recipe._id}`} className="content">
+                <Link to={`/recipe/${recipe._id}`} className="content CardContent">
                     <div className="header">{recipe.title}</div>
                     <div className="meta">
                         <span>{(new Date(recipe.date)).toLocaleDateString()}</span>

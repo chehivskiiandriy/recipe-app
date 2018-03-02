@@ -12,8 +12,8 @@ class App extends Component {
             <div className="ui container">
                 <div className="ui three item menu nav">
                     <NavLink className="item" activeClassName="active" exact to="/">Home</NavLink>
-                    <NavLink className="item" activeClassName="active" exact to="/recipes">Recipes</NavLink>
-                    <NavLink className="item" activeClassName="active" exact to="/recipes/new">Add New Recipe</NavLink>
+                    <NavLink className="item" activeClassName="active" exact to="/recipes">Admin</NavLink>
+                    <a className="item" href="https://chehivskiiandriy.github.io">Contacts</a>
                 </div>
 
                 <Route path="/recipes" exact component={RecipesPage}/>
