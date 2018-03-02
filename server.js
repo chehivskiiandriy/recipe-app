@@ -11,16 +11,16 @@ app.use(bodyParser.json());
 let dbUrl;
 
 if (!dev) {
-    // app.use(compression());
-    // app.use(morgan('common'));
-    //
-    // dbUrl = 'mongodb://admin:12345@ds133017.mlab.com:33017/recipebook';
-    //
-    // app.use(express.static(path.resolve(__dirname, 'build')));
-    //
-    // app.get('/', (req, res) => {
-    //     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-    // })
+    app.use(compression());
+    app.use(morgan('common'));
+
+    dbUrl = 'mongodb://andriy:andriy@ds155218.mlab.com:55218/recipebook';
+
+    app.use(express.static(path.resolve(__dirname, 'build')));
+
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+    })
 }
 
 if (dev) {
