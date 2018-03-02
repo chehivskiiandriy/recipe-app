@@ -1,6 +1,9 @@
-import express from 'express';
-import mongodb from 'mongodb';
-import bodyParser from 'body-parser';
+// import express from 'express';
+// import mongodb from 'mongodb';
+// import bodyParser from 'body-parser';
+const express = require('express');
+const mongodb = require('mongodb');
+const bodyParser = require('body-parser');
 // const compression = require('compression');
 // const morgan = require('morgan');
 const path = require('path');
