@@ -1,18 +1,18 @@
 import express from 'express';
 import mongodb from 'mongodb';
 import bodyParser from 'body-parser';
-const compression = require('compression');
-const morgan = require('morgan');
+// const compression = require('compression');
+// const morgan = require('morgan');
 
 const app = express();
-const dev = app.get('env') !== 'production';
+// const dev = app.get('env') !== 'production';
 app.use(bodyParser.json());
 
 let dbUrl;
 
-if (!dev) {
-    app.use(compression());
-    app.use(morgan('common'));
+// if (!dev) {
+//     app.use(compression());
+//     app.use(morgan('common'));
 
     dbUrl = 'mongodb://andriy:andriy@ds155218.mlab.com:55218/recipebook';
 
@@ -20,13 +20,13 @@ if (!dev) {
 
     app.get('/', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-    })
-}
+    });
+// }
 
-if (dev) {
-    app.use(morgan('dev'));
-    dbUrl = 'mongodb://localhost:27017';
-}
+// if (dev) {
+//     app.use(morgan('dev'));
+//     dbUrl = 'mongodb://localhost:27017';
+// }
 
 function validate(data) {
     let errors = {};
@@ -109,6 +109,6 @@ mongodb.MongoClient.connect(dbUrl, (err, client) =>{
         })
     });
 
-    app.listen(process.env.PORT ||8081, () => console.log('Server is running on localhost:8081'));
+    app.listen(process.env.PORT, () => console.log('Server is running on localhost:8081'));
 
 });
