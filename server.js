@@ -3,6 +3,7 @@ import mongodb from 'mongodb';
 import bodyParser from 'body-parser';
 // const compression = require('compression');
 // const morgan = require('morgan');
+const path = require('path');
 
 const app = express();
 // const dev = app.get('env') !== 'production';
