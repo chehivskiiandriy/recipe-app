@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import RecipesList from './RecipesList';
-import Filters from './Filters';
-import { fetchRecipes, setVisibility, setSort, resetFilters } from '../store/actions/index';
-import { SORT_BY_DATE, SORT_BY_ALPHABET, SORT_BY_VIEWS, SHOW_ALL, SHOW_LIKED, SHOW_DISLIKED } from "../shared/constant";
+import RecipesList from '../RecipesList';
+import Filters from '../Filters';
+import { fetchRecipes, setVisibility, setSort, resetFilters } from '../../store/actions/index';
+import { SORT_BY_DATE, SORT_BY_ALPHABET, SORT_BY_VIEWS, SHOW_ALL, SHOW_LIKED, SHOW_DISLIKED } from "../../shared/constant";
 import './RecipesPage.css';
 
 class RecipesPage extends React.Component {

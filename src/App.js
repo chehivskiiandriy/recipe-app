@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import { NavLink, Route } from 'react-router-dom';
 
 import './App.css';
-import RecipesPage from './components/RecipesPage';
-import RecipePage from './components/RecipePage';
+import RecipesPage from './components/RecipesPage/RecipesPage';
+import RecipePage from './components/RecipePage/RecipePage';
 import RecipeFormPage from './components/RecipeFormPage';
 
 class App extends Component {

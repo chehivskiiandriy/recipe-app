@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchRecipe, updateRecipe } from '../store/actions/index';
-import IngredientList from './IngredientList';
+import { fetchRecipe, updateRecipe } from '../../store/actions/index';
+import IngredientList from '../IngredientList';
 import './RecipePage.css';
 import classnames from "classnames";
 

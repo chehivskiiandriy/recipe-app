@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { saveRecipe, fetchRecipe, updateRecipe } from '../store/actions/index';
 
-import RecipeForm from './RecipeForm';
+import RecipeForm from './RecipeForm/RecipeForm';
 
 class RecipeFormPage extends React.Component {
     state = {

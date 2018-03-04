@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import IngredientList from './IngredientList';
+import IngredientList from '../IngredientList';
 import './RecipeForm.css';
 
 class RecipeForm extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import RecipeCard from './RecipeCard';
+import RecipeCard from './RecipeCard/RecipeCard';
 
 const recipesList = ({recipes, url}) => {
     const emptyMessage = (
