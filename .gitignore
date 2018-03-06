@@ -5,6 +5,7 @@
 /.idea
 /.git
 /backend/node_modules
+/build
 
 # testing
 /coverage
