@@ -9,3 +9,45 @@ body {
     width: 1400px !important;
   }
 }
+
+@media (min-width: 1900px){
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1450px) and (max-width: 1899px){
+  html {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1449px){
+  html {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1299px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 699px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 499px) {
+  html {
+    font-size: 10px;
+  }
+}

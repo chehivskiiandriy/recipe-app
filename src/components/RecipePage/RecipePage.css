@@ -1,6 +1,9 @@
 .Date {
     margin-right: 50px;
 }
+.RecipePage {
+    margin-bottom: 30px;
+}
 
 .RecipeContent {
     display: grid;

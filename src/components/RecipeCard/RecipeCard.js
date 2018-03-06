@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 
 import './RecipeCard.css';
-import { updateRecipe, deleteRecipe } from "../store/actions";
+import { updateRecipe, deleteRecipe } from "../../store/actions/index";
 
 class RecipeCard extends React.Component {
     static propTypes = {

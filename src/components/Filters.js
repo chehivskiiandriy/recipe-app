@@ -17,8 +17,9 @@ class Filters extends React.Component {
     };
 
     render () {
-        const { type, values} = this.props;
+        const { type, values } = this.props;
         const { active, selected } = this.state;
+
         return (
             <div className={classnames('ui floating dropdown labeled icon button',
                 {active: active})} onClick={this.handleClick}>

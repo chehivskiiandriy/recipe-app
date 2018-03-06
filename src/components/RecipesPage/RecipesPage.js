@@ -37,12 +37,18 @@ class RecipesPage extends React.Component {
                     <h1 className="item">Recipes List</h1>
                     <div className="RightMenu">
                         <div className="ui Item">
-                            <Filters type="Sort" values={sortValues} setFilter={this.props.setSort}/>
+                            <Filters
+                                type="Sort"
+                                values={sortValues}
+                                setFilter={this.props.setSort}/>
                         </div>
                         <div className="ui Item">
                             {this.props.match.url.includes('recipes')
                                 ? <Link className="ui button" to="/recipes/new">Add New Recipe</Link>
-                                : <Filters type="Filter" values={visibilityValues} setFilter={this.props.setVisibility}/>
+                                : <Filters
+                                    type="Filter"
+                                    values={visibilityValues}
+                                    setFilter={this.props.setVisibility}/>
                             }
                         </div>
                     </div>
